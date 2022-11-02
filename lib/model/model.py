@@ -150,8 +150,8 @@ class Seq2Seq(nn.Module):
             prob, token_ids = decoder_output.data.topk(1)
             token_ids = token_ids.squeeze()
             prob = prob.squeeze()
-            preds[t,:] = token_ids
-            probs[t,:] = prob
+            preds[t,:] = token_ids.cpu() # to avoid CUDA error
+            probs[t,:] = prob.cpu() # to avoid CUDA error
             input_seq = Variable(token_ids)
             if np.sum(np.equal(token_ids.cpu().numpy(),end_of_batch_pred)) == len(src):
                 break
