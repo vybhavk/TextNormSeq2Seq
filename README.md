@@ -18,6 +18,9 @@ If you find this code, models or results useful, please cite us using the follow
 - torch==0.4.1
 - python 2.7
 
+* Use colab with installing py 2.7 and torch 0.4.1
+* Install the python version
+` apt-get install python3.7 pip install torch==1.0.0`
 
 ### Download the Lexnorm2015 dataset
 ```bash
